@@ -67,7 +67,7 @@ class _FavoriteCityWeatherPageState extends State<FavoriteCityWeatherPage> {
   @override
   Widget build(BuildContext context) {  //UIหลัก appbar etc.
     return Scaffold(
-      appBar: AppBar(title: const Text('สภาพอากาศเมืองโปรด')),
+      appBar: AppBar(title: const Text('favorite')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -76,7 +76,7 @@ class _FavoriteCityWeatherPageState extends State<FavoriteCityWeatherPage> {
             _buildInputSection(),
             const SizedBox(height: 24),
             const Text(
-              'เมืองโปรดและสภาพอากาศ:',
+              'favorites:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
@@ -116,7 +116,7 @@ class _FavoriteCityWeatherPageState extends State<FavoriteCityWeatherPage> {
             Expanded(
               child: OutlinedButton(
                 onPressed: _addFavoriteCity,
-                child: const Text('บันทึกเมืองโปรด'),
+                child: const Text('บันทึกfavorites'),
               ),
             ),
           ],
@@ -128,7 +128,7 @@ class _FavoriteCityWeatherPageState extends State<FavoriteCityWeatherPage> {
   Widget _buildFavoriteList() {  //แสดงfavoriteพร้อมอากาศของแต่ละเมือง
     if (_favoriteCities.isEmpty) {
       return const Center(
-        child: Text('ยังไม่มีเมืองโปรด', style: TextStyle(color: Colors.grey)),
+        child: Text('No favorites', style: TextStyle(color: Colors.grey)),
       );
     }
 
